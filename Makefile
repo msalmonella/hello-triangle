@@ -9,7 +9,10 @@ GLFW_LIBS   := $(shell pkg-config --libs glfw3)
 
 LIBS := $(GLFW_LIBS) -lGL -ldl -lpthread -lX11
 
-SRC_CXX := src/main.cpp
+SRC_CXX := src/main.cpp \
+		   src/input.cpp
+		   # src/config/config.cpp
+		   # src/config/window.cpp
 SRC_C   := src/glad.c
 
 OBJ := $(SRC_CXX:.cpp=.o) $(SRC_C:.c=.o)
